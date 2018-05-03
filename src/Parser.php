@@ -34,7 +34,7 @@ class Parser implements IParser
         $birthDay = substr($nik, 6, 2);
         if ($birthDay > 40) {
             $identity->setGender(Identity::GENDER_FEMALE);
-            $birthDay = $birthDay - 40;
+            $birthDay = sprintf("%02d", $birthDay - 40);
         } else {
             $identity->setGender(Identity::GENDER_MALE);
         }
