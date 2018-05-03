@@ -1,0 +1,20 @@
+{
+    "name": "alexeevdv/indonesia-personal-id",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitry Alekseev",
+            "email": "mail@alexeevdv.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "alexeevdv\\personalid\\indonesia\\": "src"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "codeception/codeception": "~2.4.1"
+    }
+}
