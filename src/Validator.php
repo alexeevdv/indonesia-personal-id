@@ -14,7 +14,7 @@ class Validator implements IValidator
     /**
      * @var ILocalityCodesProvider
      */
-    private $_codesProvider;
+    private $codesProvider;
 
     /**
      * Validator constructor.
@@ -25,7 +25,7 @@ class Validator implements IValidator
         if ($codesProvider === null) {
             $codesProvider = new LocalityCodesProvider;
         }
-        $this->_codesProvider = $codesProvider;
+        $this->codesProvider = $codesProvider;
     }
 
     /**
@@ -42,7 +42,7 @@ class Validator implements IValidator
 
         // First two digits should be valid province code
         $provinceCode = substr($nik, 0, 2);
-        if (!in_array($provinceCode, $this->_codesProvider->getProvinceCodes())) {
+        if (!in_array($provinceCode, $this->codesProvider->getProvinceCodes())) {
             return false;
         }
 

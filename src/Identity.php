@@ -14,39 +14,39 @@ class Identity implements IIdentity
     /**
      * @var int
      */
-    private $_gender;
+    private $gender;
 
     /**
      * @var DateTimeImmutable
      */
-    private $_birthDate;
+    private $birthDate;
 
     /**
      * @var string
      */
-    private $_provinceCode;
+    private $provinceCode;
 
     /**
      * @var string
      */
-    private $_districtCode;
+    private $districtCode;
 
     /**
      * @var string
      */
-    private $_subDistrictCode;
+    private $subDistrictCode;
 
     /**
      * @var string
      */
-    private $_serial;
+    private $serial;
 
     /**
      * @inheritdoc
      */
     public function getGender()
     {
-        return $this->_gender;
+        return $this->gender;
     }
 
     /**
@@ -55,7 +55,7 @@ class Identity implements IIdentity
      */
     public function setGender($gender)
     {
-        $this->_gender = $gender;
+        $this->gender = $gender;
         return $this;
     }
 
@@ -64,7 +64,7 @@ class Identity implements IIdentity
      */
     public function getBirthDate()
     {
-        return $this->_birthDate;
+        return $this->birthDate;
     }
 
     /**
@@ -73,7 +73,7 @@ class Identity implements IIdentity
      */
     public function setBirthDate($date)
     {
-        $this->_birthDate = $date;
+        $this->birthDate = $date;
         return $this;
     }
 
@@ -82,7 +82,7 @@ class Identity implements IIdentity
      */
     public function getProvinceCode()
     {
-        return $this->_provinceCode;
+        return $this->provinceCode;
     }
 
     /**
@@ -91,7 +91,7 @@ class Identity implements IIdentity
      */
     public function setProvinceCode($code)
     {
-        $this->_provinceCode = $code;
+        $this->provinceCode = $code;
         return $this;
     }
 
@@ -100,7 +100,7 @@ class Identity implements IIdentity
      */
     public function getDistrictCode()
     {
-        return $this->_districtCode;
+        return $this->districtCode;
     }
 
     /**
@@ -109,7 +109,7 @@ class Identity implements IIdentity
      */
     public function setDistrictCode($code)
     {
-        $this->_districtCode = $code;
+        $this->districtCode = $code;
         return $this;
     }
 
@@ -118,7 +118,7 @@ class Identity implements IIdentity
      */
     public function getSubDistrictCode()
     {
-        return $this->_subDistrictCode;
+        return $this->subDistrictCode;
     }
 
     /**
@@ -127,7 +127,7 @@ class Identity implements IIdentity
      */
     public function setSubDistrictCode($code)
     {
-        $this->_subDistrictCode = $code;
+        $this->subDistrictCode = $code;
         return $this;
     }
 
@@ -136,7 +136,7 @@ class Identity implements IIdentity
      */
     public function getSerial()
     {
-        return $this->_serial;
+        return $this->serial;
     }
 
     /**
@@ -145,7 +145,7 @@ class Identity implements IIdentity
      */
     public function setSerial($serial)
     {
-        $this->_serial = $serial;
+        $this->serial = $serial;
         return $this;
     }
 }

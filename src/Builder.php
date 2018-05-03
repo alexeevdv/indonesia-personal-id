@@ -16,7 +16,7 @@ class Builder implements IBuilder
     /**
      * @var ILocalityCodesProvider
      */
-    private $_codesProvider;
+    private $codesProvider;
 
     /**
      * Validator constructor.
@@ -27,7 +27,7 @@ class Builder implements IBuilder
         if ($codesProvider === null) {
             $codesProvider = new LocalityCodesProvider;
         }
-        $this->_codesProvider = $codesProvider;
+        $this->codesProvider = $codesProvider;
     }
 
     /**
@@ -37,7 +37,7 @@ class Builder implements IBuilder
     {
         $identity = new Identity;
 
-        $provinceCodes = $this->_codesProvider->getProvinceCodes();
+        $provinceCodes = $this->codesProvider->getProvinceCodes();
         shuffle($provinceCodes);
         $identity->setProvinceCode(reset($provinceCodes));
 
