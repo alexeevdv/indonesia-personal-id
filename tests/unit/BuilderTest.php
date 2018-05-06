@@ -33,13 +33,14 @@ class BuilderTest extends \Codeception\Test\Unit
      */
     public function testFromIdentity($province, $district, $subDistrict, $gender, $birthDate, $serial, $nik)
     {
-        $identity = new Identity;
-        $identity->setProvinceCode($province);
-        $identity->setDistrictCode($district);
-        $identity->setSubDistrictCode($subDistrict);
-        $identity->setGender($gender);
-        $identity->setBirthDate(DateTimeImmutable::createFromFormat('Y-m-d', $birthDate));
-        $identity->setSerial($serial);
+        $identity = new Identity(
+            $gender,
+            DateTimeImmutable::createFromFormat('Y-m-d', $birthDate),
+            $province,
+            $district,
+            $subDistrict,
+            $serial
+        );
 
         $builder = new Builder;
         $this->assertEquals($nik, $builder->fromIdentity($identity));

@@ -24,12 +24,12 @@ class ParserTest extends \Codeception\Test\Unit
         $parser = new Parser;
         $identity = $parser->parse($nik);
         $this->assertInstanceOf(IIdentity::class, $identity);
-        $this->assertEquals($province, $identity->getProvinceCode());
-        $this->assertEquals($district, $identity->getDistrictCode());
-        $this->assertEquals($subDistrict, $identity->getSubDistrictCode());
-        $this->assertEquals($gender, $identity->getGender());
-        $this->assertEquals($birthDate, $identity->getBirthDate()->format('Y-m-d'));
-        $this->assertEquals($serial, $identity->getSerial());
+        $this->assertEquals($province, $identity->provinceCode());
+        $this->assertEquals($district, $identity->districtCode());
+        $this->assertEquals($subDistrict, $identity->subDistrictCode());
+        $this->assertEquals($gender, $identity->gender());
+        $this->assertEquals($birthDate, $identity->birthDate()->format('Y-m-d'));
+        $this->assertEquals($serial, $identity->serial());
     }
 
     /**
