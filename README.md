@@ -47,7 +47,7 @@ use alexeevdv\personalid\indonesia\Parser;
 $parser = new Parser;
 // Returns identity instance
 $identity = $parser->parse('NIK_TO_BE_PARSED');
-echo $identity->getBirthDate()->format('Y-m-d');
+echo $identity->birthDate()->format('Y-m-d');
 ```
 
 ### Builder

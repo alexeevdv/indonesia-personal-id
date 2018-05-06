@@ -35,26 +35,26 @@ class Builder implements IBuilder
      */
     public function random()
     {
-        $identity = new Identity;
-
-        $provinceCodes = $this->codesProvider->getProvinceCodes();
-        shuffle($provinceCodes);
-        $identity->setProvinceCode(reset($provinceCodes));
-
-        // TODO set random value
-        $identity->setDistrictCode('01');
-
-        // TODO set random value
-        $identity->setSubDistrictCode('01');
-
-        $date = date('Y-m-d', mt_rand(1, strtotime('-18 years')));
-        $identity->setBirthDate(DateTimeImmutable::createFromFormat('Y-m-d', $date));
-
         $genders = [Identity::GENDER_MALE, Identity::GENDER_FEMALE];
         shuffle($genders);
-        $identity->setGender(reset($genders));
+        $gender = reset($genders);
 
-        $identity->setSerial(mt_rand(1, 9999));
+        $birthDate = DateTimeImmutable::createFromFormat('U', mt_rand(1, strtotime('-18 years')));
+
+        $provinceCodes = $this->codesProvider->provinceCodes();
+        shuffle($provinceCodes);
+        $provinceCode = reset($provinceCodes);
+
+        $identity = new Identity(
+            $gender,
+            $birthDate,
+            $provinceCode,
+            // TODO set random value
+            '01',
+            // TODO set random value
+            '01',
+            mt_rand(1, 9999)
+        );
 
         return $this->fromIdentity($identity);
     }
@@ -64,18 +64,18 @@ class Builder implements IBuilder
      */
     public function fromIdentity(IIdentity $identity)
     {
-        $birthday = $identity->getBirthDate()->format('d');
-        if ($identity->getGender() === IIdentity::GENDER_FEMALE) {
+        $birthday = $identity->birthDate()->format('d');
+        if ($identity->gender() === IIdentity::GENDER_FEMALE) {
             $birthday += 40;
         }
-        $birthdate = $birthday . $identity->getBirthDate()->format('my');
+        $birthDate = $birthday . $identity->birthDate()->format('my');
 
         return ''
-            . sprintf("%02d", $identity->getProvinceCode())
-            . sprintf("%02d", $identity->getDistrictCode())
-            . sprintf("%02d", $identity->getSubDistrictCode())
-            . $birthdate
-            . sprintf("%04d", $identity->getSerial())
+            . sprintf("%02d", $identity->provinceCode())
+            . sprintf("%02d", $identity->districtCode())
+            . sprintf("%02d", $identity->subDistrictCode())
+            . $birthDate
+            . sprintf("%04d", $identity->serial())
         ;
     }
 }

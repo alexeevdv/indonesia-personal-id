@@ -42,110 +42,69 @@ class Identity implements IIdentity
     private $serial;
 
     /**
+     * Identity constructor.
+     * @param integer $gender
+     * @param DateTimeImmutable $birthDate
+     * @param string $provinceCode
+     * @param string $districtCode
+     * @param string $subDistrictCode
+     * @param string $serial
+     */
+    public function __construct($gender, $birthDate, $provinceCode, $districtCode, $subDistrictCode, $serial)
+    {
+        $this->gender = $gender;
+        $this->birthDate = $birthDate;
+        $this->provinceCode = $provinceCode;
+        $this->districtCode = $districtCode;
+        $this->subDistrictCode = $subDistrictCode;
+        $this->serial = $serial;
+    }
+
+    /**
      * @inheritdoc
      */
-    public function getGender()
+    public function gender()
     {
         return $this->gender;
     }
 
     /**
-     * @param integer $gender
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-        return $this;
-    }
-
-    /**
      * @inheritdoc
      */
-    public function getBirthDate()
+    public function birthDate()
     {
         return $this->birthDate;
     }
 
     /**
-     * @param DateTimeImmutable $date
-     * @return $this
-     */
-    public function setBirthDate($date)
-    {
-        $this->birthDate = $date;
-        return $this;
-    }
-
-    /**
      * @inheritdoc
      */
-    public function getProvinceCode()
+    public function provinceCode()
     {
         return $this->provinceCode;
     }
 
     /**
-     * @param string $code
-     * @return $this
-     */
-    public function setProvinceCode($code)
-    {
-        $this->provinceCode = $code;
-        return $this;
-    }
-
-    /**
      * @inheritdoc
      */
-    public function getDistrictCode()
+    public function districtCode()
     {
         return $this->districtCode;
     }
 
     /**
-     * @param string $code
-     * @return $this
-     */
-    public function setDistrictCode($code)
-    {
-        $this->districtCode = $code;
-        return $this;
-    }
-
-    /**
      * @inheritdoc
      */
-    public function getSubDistrictCode()
+    public function subDistrictCode()
     {
         return $this->subDistrictCode;
     }
 
     /**
-     * @param string $code
-     * @return $this
-     */
-    public function setSubDistrictCode($code)
-    {
-        $this->subDistrictCode = $code;
-        return $this;
-    }
-
-    /**
      * @inheritdoc
      */
-    public function getSerial()
+    public function serial()
     {
         return $this->serial;
-    }
-
-    /**
-     * @param string $serial
-     * @return $this
-     */
-    public function setSerial($serial)
-    {
-        $this->serial = $serial;
-        return $this;
     }
 }

@@ -16,30 +16,30 @@ interface IIdentity
     /**
      * @return integer
      */
-    public function getGender();
+    public function gender();
 
     /**
      * @return DateTimeImmutable
      */
-    public function getBirthDate();
+    public function birthDate();
 
     /**
      * @return string
      */
-    public function getProvinceCode();
+    public function provinceCode();
 
     /**
      * @return string
      */
-    public function getDistrictCode();
+    public function districtCode();
 
     /**
      * @return string
      */
-    public function getSubDistrictCode();
+    public function subDistrictCode();
 
     /**
      * @return string
      */
-    public function getSerial();
+    public function serial();
 }

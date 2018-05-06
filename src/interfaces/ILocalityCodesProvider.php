@@ -11,5 +11,5 @@ interface ILocalityCodesProvider
     /**
      * @return array
      */
-    public function getProvinceCodes();
+    public function provinceCodes();
 }

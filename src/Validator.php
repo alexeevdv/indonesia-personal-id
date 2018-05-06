@@ -42,7 +42,7 @@ class Validator implements IValidator
 
         // First two digits should be valid province code
         $provinceCode = substr($nik, 0, 2);
-        if (!in_array($provinceCode, $this->codesProvider->getProvinceCodes())) {
+        if (!in_array($provinceCode, $this->codesProvider->provinceCodes())) {
             return false;
         }
 
